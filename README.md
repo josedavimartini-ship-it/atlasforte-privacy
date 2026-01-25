@@ -1,4 +1,4 @@
-AtlasForte Privacy Page
+# AtlasForte Privacy Page
 
 This repository contains the public privacy policy page for AtlasForteFinanceiro (AFF).
 
@@ -13,8 +13,7 @@ How to publish (quick):
    - git add privacy.html README.md
    - git commit -m "Add public privacy page for AtlasForte"
    - git branch -M main
-   - git remote add origin git@github.com:<your-username>/atlasforte-privacy.git
-   - git push -u origin main
+  - `git remote add origin git@github.com:your-username/atlasforte-privacy.git`
 
 3) Enable GitHub Pages:
    - Repo → Settings → Pages → Source: **main** / **root** (or /docs if you prefer)
