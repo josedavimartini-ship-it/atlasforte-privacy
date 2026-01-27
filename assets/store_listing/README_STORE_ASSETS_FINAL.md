@@ -29,3 +29,6 @@ How to regenerate
 
 If you provide a new icon, drop it in `assets/store_listing/final/` as `icon_source.png` (or pass the path to `-s/--source`) and run the script. The generator will skip existing files unless you pass `--force`/`-f` to overwrite.
 
+
+
+Final screenshots: screenshot_final1_1080x1920.png .. screenshot_final4_1080x1920.png
