@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AtlasForteFinanceiro — Data Safety Details</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Roboto, "Segoe UI", Arial; max-width:900px; margin:28px auto; padding:0 16px; color:#111 }
+    h1, h2{ color:#0b5 }
+    pre { background:#f7f7f7; padding:12px; border-radius:6px; overflow:auto }
+    .note { background:#fffbe6; padding:8px 12px; border-left:4px solid #ffd54f }
+  </style>
+</head>
+<body>
+  <h1>Data Safety — AtlasForteFinanceiro</h1>
+  <p>This page contains detailed information and short copy snippets you can paste into the Google Play Console Data safety & App access forms.</p>
+
+  <h2>Full data categories (what we collect)</h2>
+  <ul>
+    <li><strong>Personal info:</strong> email, display name</li>
+    <li><strong>Account info:</strong> username, password hash, tokens</li>
+    <li><strong>Financial info:</strong> budgets, transactions, scheduled transactions, bank connection metadata</li>
+    <li><strong>Payment info:</strong> purchases via Stripe Checkout — card data handled by Stripe</li>
+    <li><strong>Device & identifiers:</strong> device id, advertising id</li>
+    <li><strong>App telemetry:</strong> crash reports, usage analytics</li>
+    <li><strong>User uploads:</strong> receipts, documents, photos (camera uploads)</li>
+  </ul>
+
+  <h2>Why we collect</h2>
+  <p>Primary purposes: app functionality (account, budgets, transactions), analytics/diagnostics, advertising (AdMob), payment processing (Stripe), and fraud prevention.</p>
+
+  <h2>Who we share with</h2>
+  <p>Examples: Stripe (payment processing, fraud checks), Google (AdMob/Analytics for ads & analytics), transactional email providers (for receipts), and bank integration providers (for optional transaction sync).</p>
+
+  <h2>Retention & deletion</h2>
+  <p>Active personal & financial data are deleted within 30 days after a verified deletion request. Backups may be retained up to 90 days; logs/anonymized records up to 180 days where required by security or legal obligations.</p>
+
+  <h2>Short copy snippets (copy/paste into Play Console)</h2>
+  <pre>
+Personal info:
+Collected: email, display name. Purpose: account and authentication. Shared: only with Google when using Google Sign-in; not sold.
+
+Name:
+Collected: Yes. Shared: No. Processed ephemerally: No. Required: Optional (users can choose whether to provide a display name).
+Why collected: App functionality, Account management, Personalisation (optional).
+
+Email address:
+Collected: Yes. Shared: Yes (with Google for OAuth, with transactional email provider, and with Stripe/analytics providers as needed).
+Processed ephemerally: No (persisted in user profiles).
+Required: Required (needed for account creation and authentication).
+Why collected: App functionality (account/authentication), Developer communications (receipts/notifications), Fraud prevention/security, Account management, Analytics/Advertising (aggregated measurement).
+Why shared: App functionality (Google OAuth), Developer communications (email provider), Fraud prevention/security (Stripe), Analytics/Advertising (aggregated reporting).
+
+Financial info:
+Collected: budgets, transactions, bank connection metadata. Purpose: core app functionality. Shared: no.
+
+Payment info:
+Collected/transmitted during Stripe Checkout. Card details are handled by Stripe and are not stored by our servers.
+
+Device & identifiers:
+Collected: device identifiers and Advertising ID. Purpose: analytics and ad personalization. Shared: Google (AdMob, Analytics).
+
+App telemetry:
+Collected: crash reports and analytics for product improvement. Shared: Google (Analytics/Crash) if enabled.
+
+Photos:
+Collected: user-captured photos (e.g., receipts) used for OCR and bookkeeping. Purpose: extract transaction data (OCR) and attach receipts to the user account. Shared: Yes — images may be processed by a third-party OCR provider (e.g., Google Cloud Vision) for automatic reading and extraction; images are not sold. Processed ephemerally: No — images are persisted in the user account unless deleted by the user.
+
+User uploads:
+Collected: receipts and documents (camera or file uploads). Purpose: bookkeeping and OCR. Shared: Yes — see Photos/OCR above for details.
+
+Retention:
+Personal & financial data deleted within 30 days after verified request. Backups may be retained up to 90 days; logs/anonymized records up to 180 days.
+  </pre>
+
+  <h2>Reviewer note (copy/paste)</h2>
+  <p class="note">Delete URL: https://planilha-financeira-fam-lia-davi-martini.onrender.com/account/delete<br>
+  Payments use Stripe Checkout (PCI-compliant). Card numbers are not stored by our servers.<br>
+  Support: <a href="mailto:davimartini@gmail.com">davimartini@gmail.com</a></p>
+
+  <h2>One-paste block for Google Play Console</h2>
+  <pre>
+1) Data collection & security: All network traffic is encrypted with TLS. Personal and financial data are stored securely on our backend.
+
+2) Data types (selected): Personal info (Email, Name); Financial info (Budgets, Transactions, Bank metadata); Payment info (Stripe Checkout); Device identifiers & Advertising ID; App telemetry (crash reports, analytics); User uploads (receipts/photos, files).
+
+3) Per-type short descriptions (paste into Play fields):
+- Personal info: Collected: email, display name. Purpose: account/authentication. Shared: only with Google when using Google Sign-in; not sold.
+- Email: Collected: yes. Shared: yes (Google when using Google Sign-in, transactional email provider, Stripe/analytics as needed). Used for receipts, authentication and account recovery.
+- Name: Collected: yes. Shared: no (except Google OAuth when used). Purpose: profile display and account management.
+- Financial info: Collected: budgets, transactions, bank metadata. Purpose: core app functionality.
+- Payment info: Collected/transmitted during Stripe Checkout. Card details are handled by Stripe and are not stored by our servers.
+- Device & identifiers: Collected: device identifiers and Advertising ID. Purpose: analytics and ad personalization. Shared: Google (AdMob, Analytics).
+- App telemetry: Collected: crash reports and analytics. Shared: Google (Analytics/Crash) if enabled.
+- User uploads: Collected: receipts and documents (camera or file uploads). Purpose: bookkeeping and OCR. Shared: no.
+
+4) Retention: Active personal & financial data deleted within 30 days after verified request. Backups up to 90 days; logs/anonymized records up to 180 days.
+
+5) URLs & contacts:
+- Account deletion URL: https://planilha-financeira-fam-lia-davi-martini.onrender.com/account/delete
+- Data deletion page: https://planilha-financeira-fam-lia-davi-martini.onrender.com/apps/atlasfortefinanceiro/account/delete
+- Privacy policy: https://planilha-financeira-fam-lia-davi-martini.onrender.com/privacy
+- Support: davimartini@gmail.com
+
+6) Reviewer note:
+- Payments use Stripe Checkout (PCI-compliant). Card numbers are not stored by our servers. For verification, contact davimartini@gmail.com.
+  </pre>
+
+  <footer style="margin-top:26px;color:#666;font-size:13px">Last updated: 2026-01-26</footer>
+</body>
+</html>

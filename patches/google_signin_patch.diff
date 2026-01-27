@@ -1,0 +1,72 @@
+*** Add File: lib/widgets/google_sign_in_button.dart
+***
+*** Begin Patch
+*** Add File: lib/widgets/google_sign_in_button.dart
++import 'package:flutter/material.dart';
++import '../google_sign_in_helper.dart';
++
++class GoogleSignInButton extends StatefulWidget {
++  final String apiBase;
++  const GoogleSignInButton({super.key, required this.apiBase});
++
++  @override
++  State<GoogleSignInButton> createState() => _GoogleSignInButtonState();
++}
++
++class _GoogleSignInButtonState extends State<GoogleSignInButton> {
++  bool _loading = false;
++
++  Future<void> _handleSignIn() async {
++    setState(() => _loading = true);
++    try {
++      final token = await signInWithGoogleAndLogin(widget.apiBase);
++      if (token != null) {
++        // TODO: Replace with your token storage logic
++        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Signed in')));
++      } else {
++        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Sign-in cancelled or failed')));
++      }
++    } catch (e) {
++      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
++    } finally {
++      setState(() => _loading = false);
++    }
++  }
++
++  @override
++  Widget build(BuildContext context) {
++    return TextButton.icon(
++      onPressed: _loading ? null : _handleSignIn,
++      icon: const Icon(Icons.login),
++      label: Text(_loading ? 'Signing in...' : 'Sign in with Google'),
++    );
++  }
++}
++
+*** End Patch
++
+*** NOTE
++To apply this patch in a Flutter repo root (linux/mac):
++
++  # create file
++  mkdir -p lib/widgets
++  # copy the content above into lib/widgets/google_sign_in_button.dart
++
++Add the dependency to pubspec.yaml if not present:
++
++dependencies:
++  google_sign_in: ^6.0.0
++
++Insert the widget into your login screen:
++
++  import 'widgets/google_sign_in_button.dart';
++
++  Column(
++    children: [
++      // existing form
++      SizedBox(height: 12),
++      GoogleSignInButton(apiBase: const String.fromEnvironment('API_BASE', defaultValue: 'https://planilha-financeira-fam-lia-davi-martini.onrender.com')),
++    ],
++  )
++
++Run `flutter pub get` and test on device.
