@@ -29,6 +29,16 @@ How to regenerate
 
 If you provide a new icon, drop it in `assets/store_listing/final/` as `icon_source.png` (or pass the path to `-s/--source`) and run the script. The generator will skip existing files unless you pass `--force`/`-f` to overwrite.
 
+Importing icons from your local machine (PowerShell)
+
+- Use the helper script to import and regenerate all assets. Example (replace path):
+
+```powershell
+.\scripts\import_new_icons.ps1 -SourcePath 'D:\Bkp SSD\Downloads\JoseDaviDownloads\AtlasForteFinancial' -Force
+```
+
+- The script will back up current final assets to `assets/store_listing/removed_assets_<timestamp>` before copying new images and regenerating the derived assets (icon, feature graphic, screenshots).
+
 
 
 Final screenshots: screenshot_final1_1080x1920.png .. screenshot_final4_1080x1920.png
