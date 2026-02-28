@@ -18,7 +18,7 @@ AtlasForte é ideal para quem quer manter controle do orçamento familiar ou da 
 
 Suporte / contato:
 
-- E-mail: davimartini@gmail.com
+- E-mail: [davimartini@gmail.com](mailto:davimartini@gmail.com)
 - Política de privacidade: [Política de privacidade](//planilha-financeira-fam-lia-davi-martini.onrender.com/privacy)
 
 Feature graphic suggestion:
